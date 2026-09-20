@@ -24,6 +24,7 @@ Upstream recipe: <https://recipes.vllm.ai/Qwen/Qwen-Image-2.1>
 | `qwen_lab/runtime.py` | one `Omni` instance, many requests; offload presets |
 | `tests/` | fast env checks (default), offline pipeline smoke tests (`-m slow`), server API tests (`-m server`) |
 | `outputs/` | generated images, manifests, server log (gitignored) |
+| `docs/images/` | committed sample outputs used in this README |
 | `REPORT.md` | actual run report: timings, memory findings, quality notes, limitations |
 
 ## Measured on this box
@@ -37,6 +38,31 @@ Upstream recipe: <https://recipes.vllm.ai/Qwen/Qwen-Image-2.1>
 
 Quality: headline typography is character-exact, portraits/landscapes are photorealistic, cutout prompts give
 real transparency (76.6 % transparent pixels measured). Body text below ~20 px turns into pseudo-glyphs.
+
+## Example outputs
+
+Generated on a single A10 with the repo defaults (layer DiT offload, VAE tiling, 40 steps, seed 42).
+
+**Prompt battery** - 8 prompts, ~48 s each (full manifest: `outputs/gallery/manifest.json`):
+
+![Gallery montage](docs/images/gallery-montage.jpg)
+
+| Typography | Transparency (RGBA) |
+| --- | --- |
+| ![Retro Mars poster with exact headline text](docs/images/poster-typography.jpg) | ![Red sneaker cutout over a checkerboard](docs/images/transparent-sneaker-checkerboard.jpg) |
+| Headline text renders character-perfect ("VISIT MARS" / "Gravity Optional") | Cutout prompt returns real alpha - 76.6 % of pixels fully transparent (checkerboard pasted behind) |
+
+| Ultra-wide panorama | Portrait |
+| --- | --- |
+| ![Norwegian fjord panorama](docs/images/panorama-fjord.jpg) | ![Portrait of an elderly fisherman](docs/images/portrait-fisherman.jpg) |
+| 1536x640, coherent across the frame | Photoreal skin and beard texture at 1024x1024 |
+
+**Editing** - 40 steps, 768x768:
+
+| Recolor (fidelity) | Local text replacement |
+| --- | --- |
+| ![Teapot before and after the crimson recolor](docs/images/edit-recolor-before-after.jpg) | ![App mockup before and after the price and button text edit](docs/images/edit-text-before-after.jpg) |
+| "Change the glaze to a deep crimson red, keep the same photo style" | `$18 / bag` -> `$24 / bag`, `SUBSCRIBE` -> `PREORDER` |
 
 ## Hardware notes
 

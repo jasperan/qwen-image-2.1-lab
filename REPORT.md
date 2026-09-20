@@ -93,7 +93,7 @@ Total 385.6 s (48.2 s/image average) in a single process. All outputs are RGBA b
 4-channel in/out; only transparency-prompts actually use alpha, otherwise alpha sits at 190-255 (light noise).
 
 Artifacts: `outputs/gallery/*.png`, `outputs/gallery/montage.png`, `outputs/gallery/gallery.html`,
-`outputs/gallery/manifest.json`.
+`outputs/gallery/manifest.json`. Committed, downscaled copies used by the README live in `docs/images/`.
 
 ## Edit results (40 steps, seed 42)
 
