@@ -1,0 +1,69 @@
+{
+  "comment": "Prompt battery for the Qwen-Image-2.1 gallery. Sizes must be multiples of 32.",
+  "prompts": [
+    {
+      "id": "product-teapot",
+      "category": "product",
+      "width": 1024,
+      "height": 1024,
+      "prompt": "Professional product photograph of a handcrafted indigo-glazed ceramic teapot on a walnut table, soft window light from the left, shallow depth of field, visible clay texture and glaze pooling, muted warm color palette",
+      "notes": "classic recipe prompt; texture and material fidelity"
+    },
+    {
+      "id": "poster-typography",
+      "category": "typography",
+      "width": 832,
+      "height": 1216,
+      "prompt": "A retro travel poster for Mars with the large headline text \"VISIT MARS\" in bold art-deco lettering, a smaller caption reading \"Gravity Optional\", a stylized red planet with a tiny rocket, limited palette of rust, cream and deep teal, vintage screen-print grain",
+      "notes": "long quoted text: checks glyph accuracy, not just layout"
+    },
+    {
+      "id": "infographic-blackholes",
+      "category": "infographic",
+      "width": 1216,
+      "height": 832,
+      "prompt": "A clean educational infographic explaining black holes, title \"BLACK HOLES\" at the top, four numbered panels with simple diagrams and short captions labeled event horizon, accretion disk, spaghettification and Hawking radiation, flat vector style, navy and amber palette, crisp readable labels",
+      "notes": "dense small text plus structured layout"
+    },
+    {
+      "id": "panorama-fjord",
+      "category": "panorama",
+      "width": 1536,
+      "height": 640,
+      "prompt": "Ultra-wide panoramic photograph of a Norwegian fjord at sunrise, mirror-still water reflecting layered mountains, low mist, a single red wooden boat for scale, cinematic light, extreme detail, natural color grading",
+      "notes": "wide aspect ratio; composition coherence across the frame"
+    },
+    {
+      "id": "portrait-fisherman",
+      "category": "portrait",
+      "width": 1024,
+      "height": 1024,
+      "prompt": "Editorial close-up portrait of an elderly fisherman with deeply weathered skin, salt-and-pepper beard, pale blue eyes, wool sweater, overcast coastal light, 85mm lens, shallow depth of field, natural skin texture with visible pores and wrinkles",
+      "notes": "skin texture and likeness fidelity"
+    },
+    {
+      "id": "transparent-sneaker",
+      "category": "transparency",
+      "width": 1024,
+      "height": 1024,
+      "prompt": "Studio product photograph of a single red high-top sneaker floating at a slight angle, isolated on a fully transparent background, crisp edges, soft studio reflections, no shadow on the ground, e-commerce cutout style",
+      "notes": "RGBA output: alpha channel should be present and used"
+    },
+    {
+      "id": "ui-mockup",
+      "category": "ui",
+      "width": 832,
+      "height": 1216,
+      "prompt": "A polished mobile app screen for a specialty coffee subscription, dark warm interface, large product photo of a coffee bag at the top, bold readable headline \"THIS MONTH'S ROAST\", a price row showing \"$18 / bag\", a rounded button labeled \"SUBSCRIBE\", clean typography, realistic iOS status bar",
+      "notes": "UI mockup realism and micro-typography"
+    },
+    {
+      "id": "dragonfly-macro",
+      "category": "macro",
+      "width": 1024,
+      "height": 1024,
+      "prompt": "Extreme macro photograph of a dragonfly wing at golden hour, iridescent membrane with a visible vein network, dew droplets refracting warm light, stacked-focus sharpness, bokeh background of reeds",
+      "notes": "high-frequency detail and depth separation"
+    }
+  ]
+}

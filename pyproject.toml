@@ -1,0 +1,16 @@
+# Lab configuration only. The runtime environment (vLLM + vllm-omni) is created
+# by scripts/setup.sh into .venv; run everything with .venv/bin/python.
+# See the README for the exact commands.
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+markers = [
+    "slow: loads the diffusion pipeline and generates images on the GPU",
+    "server: starts the vLLM-Omni OpenAI-compatible server in a subprocess",
+]
+addopts = "-m 'not slow and not server'"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::UserWarning",
+]

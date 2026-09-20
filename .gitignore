@@ -1,0 +1,14 @@
+# Runtime + model artifacts
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Vendored upstream checkout of vllm-omni (created by scripts/setup.sh)
+vendor/
+
+# Downloaded weights and generated images
+models/
+outputs/
+
+*.log
