@@ -60,6 +60,8 @@ def server() -> ServerHandle:
         "serve",
         model,
         "--omni",
+        "--host",
+        "127.0.0.1",
         "--port",
         str(port),
         "--diffusion-offload-config",

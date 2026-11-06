@@ -13,6 +13,9 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PORT="${PORT:-8091}"
+# Loopback by default: the server has no authentication unless EXTRA_ARGS carries
+# --api-key. Set HOST=0.0.0.0 deliberately (and pass --api-key) to expose it.
+HOST="${HOST:-127.0.0.1}"
 
 if [ -n "${MODEL:-}" ]; then
   MODEL_ARG="$MODEL"
@@ -28,5 +31,6 @@ else
   EXTRA=(--diffusion-offload-config '{"mode":"layer","components":["dit"]}' --vae-use-tiling)
 fi
 
-echo "serving $MODEL_ARG on port $PORT (extra args: ${EXTRA[*]})"
-exec "$ROOT/.venv/bin/vllm" serve "$MODEL_ARG" --omni --port "$PORT" "${EXTRA[@]}"
+# Do not echo EXTRA_ARGS: it may carry --api-key.
+echo "serving $MODEL_ARG on $HOST:$PORT"
+exec "$ROOT/.venv/bin/vllm" serve "$MODEL_ARG" --omni --host "$HOST" --port "$PORT" "${EXTRA[@]}"
